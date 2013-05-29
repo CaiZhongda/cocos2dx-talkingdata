@@ -68,6 +68,11 @@ typedef enum {
  */
 + (NSString *)getDeviceId;
 
+/**
+ *  @method setLogOn 设置记录日志
+ */
++ (void)setLogOn;
+
 @end
 
 
@@ -174,6 +179,13 @@ typedef enum {
  *	@param 	orderId                 订单id        类型:NSString
  */
 + (void)onChargeSuccess:(NSString *)orderId;
+
+/**
+ *  @method onReward                虚拟币赠送
+ *  @param  virtualCurrencyAmount   虚拟币金额         类型:double
+ *  @param  reason                  赠送虚拟币的原因    类型:NSString
+ */
++ (void)onReward:(double)virtualCurrencyAmount reason:(NSString *)reason;
 
 @end
 

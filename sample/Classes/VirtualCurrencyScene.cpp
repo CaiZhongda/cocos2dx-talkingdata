@@ -31,6 +31,7 @@ using namespace cocos2d;
 enum {
 	ONREQUEST = 0,
 	ONSUCCESS,
+    ONREWARD,
 	ONEVENT
 };
 
@@ -42,6 +43,7 @@ typedef struct tagEventMenuItem {
 static EventMenuItem s_EventMenuItem[] = {
     {"Request", ONREQUEST},
     {"Success", ONSUCCESS},
+    {"Reward", ONREWARD},
     {"OnEvent", ONEVENT}
 };
 
@@ -125,6 +127,10 @@ void VirtualCurrencyLayer::eventMenuCallback(CCObject* pSender) {
             
     case ONSUCCESS:
     	TDCCVirtualCurrency::onChargeSuccess("o_1");
+        break;
+            
+    case ONREWARD:
+        TDCCVirtualCurrency::onReward(100, "reason");
         break;
 
     case ONEVENT:

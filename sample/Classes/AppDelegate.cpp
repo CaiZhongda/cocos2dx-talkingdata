@@ -45,6 +45,8 @@ void AppDelegate::loadAnalyticsPlugin()
 
 bool AppDelegate::applicationDidFinishLaunching()
 {
+	CCLog("enter applicationDidFinishLaunching...");
+    TDCCTalkingDataGA::onStart("2B002F9CD724EB09730AF32CB4D909C3", "");
     // initialize director
     CCDirector *pDirector = CCDirector::sharedDirector();
     pDirector->setOpenGLView(CCEGLView::sharedOpenGLView());
@@ -61,7 +63,7 @@ bool AppDelegate::applicationDidFinishLaunching()
 
     // run
     pDirector->runWithScene(pScene);
-
+    CCLog("exit applicationDidFinishLaunching...");
     return true;
 }
 
@@ -72,8 +74,8 @@ void AppDelegate::applicationDidEnterBackground() {
 
 // this function will be called when the app is active again
 void AppDelegate::applicationWillEnterForeground() {
+    CCLog("applicationWillEnterForeground...");
     CCDirector::sharedDirector()->resume();
-    TDCCTalkingDataGA::onStart("2B002F9CD724EB09730AF32CB4D909C3", "");
 
     // if you use SimpleAudioEngine, it must resume here
     // SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();

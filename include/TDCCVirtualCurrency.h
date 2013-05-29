@@ -17,6 +17,8 @@ public:
 	static void onChargeRequst(const char* orderId, const char* iapId, double currencyAmount, const char* currencyType, double virtualCurrencyAmount, const char* paymentType);
 
 	static void onChargeSuccess(const char* orderId);
+    
+    static void onReward(double currencyAmount, const char* reason);
 
 };
 

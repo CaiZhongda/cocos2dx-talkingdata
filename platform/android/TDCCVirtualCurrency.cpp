@@ -35,3 +35,16 @@ void TDCCVirtualCurrency::onChargeSuccess(const char* orderId) {
 		t.env->DeleteLocalRef(t.classID);
 	}
 }
+
+void TDCCVirtualCurrency::onReward(double currencyAmount, const char* reason) {
+	TDGAJniMethodInfo t;
+	if (TDGAJniHelper::getStaticMethodInfo(t
+		, JAVA_CLASS_NAME
+		, "onReward"
+		, "(DLjava/lang/String;)V")) {
+		jstring jreason = t.env->NewStringUTF(reason);
+		t.env->CallStaticVoidMethod(t.classID, t.methodID, currencyAmount, jreason);
+		t.env->DeleteLocalRef(jreason);
+		t.env->DeleteLocalRef(t.classID);
+	}
+}

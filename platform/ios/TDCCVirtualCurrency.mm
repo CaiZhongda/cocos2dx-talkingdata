@@ -28,3 +28,8 @@ void TDCCVirtualCurrency::onChargeSuccess(const char* orderId) {
     NSString* id = [NSString stringWithUTF8String:orderId];
     [TDGAVirtualCurrency onChargeSuccess:id];
 }
+
+void TDCCVirtualCurrency::onReward(double currencyAmount, const char* reason) {
+    NSString* ocReason = (reason) ? [NSString stringWithUTF8String : reason] : nil;
+    [TDGAVirtualCurrency onReward:currencyAmount reason:ocReason];
+}

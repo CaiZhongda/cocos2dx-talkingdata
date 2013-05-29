@@ -12,7 +12,7 @@ public class TalkingDataCocos2dx extends Cocos2dxActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        TalkingDataGA.DEBUG = true;
         // 代码初始化, 也可以在AndroidManifest.xml中声明.
 //        TalkingDataGA.init(this, "2B002F9CD724EB09730AF32CB4D909C3", "test");
     }
