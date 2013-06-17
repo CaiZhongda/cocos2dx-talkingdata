@@ -32,7 +32,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
+
         <meta-data android:name="TDGA_APP_ID" android:value="2B002F9CD724EB09730AF32CB4D909C3"/>
         <meta-data android:name="TDGA_CHANNEL_ID" android:value="1"/>
     </application>
